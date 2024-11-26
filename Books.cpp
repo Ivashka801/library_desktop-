@@ -12,10 +12,10 @@ std::string toLower(const std::string& str) {
 std::vector<Book> Books::findBookByTitle(const std::string& title) const 
 {
 	std::vector<Book> foundBooks;
-	std::string lowerTitle = toLower(title);
+	std::string lowercaseTitle = toLower(title);
 
-	for (const auto& book : books) {
-		std::string bookTitle = toLower(book->getTitle());
+	for (auto book : books) {
+		std::string lowercaseBookTitle = toLower(book->getTitle());
 		if (bookTitle.find(lowerTitle) != std::string::npos) {
 			foundBooks.push_back(book);
 		}
